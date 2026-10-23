@@ -1,0 +1,20 @@
+class Solution:
+    def timeRequiredToBuy(self, tickets: List[int], k: int) -> int:
+        
+        #target = tickets[k]
+        #if target == 1:
+        #    return 1
+        #ans = 0
+        #for t in tickets:
+        #    ans += min(t, target)
+        #return ans
+
+        i = 0
+        ans =  0
+        while tickets[k] != 0:
+            if tickets[i] != 0:
+                tickets[i] -= 1
+                ans += 1
+            i += 1
+            i %= len(tickets) 
+        return ans
